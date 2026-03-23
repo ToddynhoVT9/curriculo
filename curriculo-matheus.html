@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matheus Lopes — Currículo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant:wght@600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0d0c0a;
+      --surface:     #131210;
+      --surface-2:   #181612;
+      --surface-3:   #1f1c17;
+      --border:      #2a2620;
+      --border-2:    #332e27;
+      --amber:       #c8913a;
+      --amber-dim:   #8f6328;
+      --amber-glow:  rgba(200,145,58,.15);
+      --amber-glow2: rgba(200,145,58,.06);
+      --gold:        #e0b96a;
+      --text:        #d4c9b8;
+      --text-dim:    #8a8070;
+      --text-muted:  #4a4540;
+      --green:       #3a7a4a;
+      --blue:        #3a608a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.85;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 44px;
+      background: rgba(13,12,10,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      z-index: 100;
+    }
+    .topbar-logo {
+      font-family: 'Cormorant', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: .06em;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .topbar-logo::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--amber);
+      border-radius: 50%;
+    }
+    .topbar-nav {
+      display: flex;
+      gap: 2px;
+    }
+    .topbar-nav a {
+      font-family: 'Raleway', sans-serif;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 3px;
+      transition: color .15s, background .15s;
+    }
+    .topbar-nav a:hover { color: var(--text); background: var(--surface-3); }
+    .topbar-tag {
+      font-family: 'Raleway', sans-serif;
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--surface-3);
+      border: 1px solid var(--border-2);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: calc(44px + 5rem) clamp(1.5rem, 6vw, 4rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: end;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-kicker {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      margin-bottom: 1rem;
+    }
+    .hero-name {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -.01em;
+      color: var(--gold);
+      margin-bottom: .8rem;
+    }
+    .hero-title {
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-bottom: 1.6rem;
+    }
+    .hero-summary {
+      max-width: 560px;
+      font-size: .98rem;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+    .hero-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color .15s, color .15s;
+    }
+    .contact-pill:hover { border-color: var(--amber-dim); color: var(--amber); }
+    .contact-pill svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .hero-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+    .hero-monogram {
+      width: 90px; height: 90px;
+      background: linear-gradient(135deg, var(--surface-3), var(--surface-2));
+      border: 1px solid var(--border-2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--amber);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-monogram::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, var(--amber-glow), transparent 70%);
+    }
+    .hero-location {
+      font-family: 'Raleway', sans-serif;
+      font-size: .6rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    /* ── LAYOUT ── */
+    .page-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 0;
+      padding: 0 clamp(1.5rem, 6vw, 4rem);
+    }
+    .main-col {
+      padding: 4rem 3.5rem 6rem 0;
+      border-right: 1px solid var(--border);
+    }
+    .side-col {
+      padding: 4rem 0 6rem 2.5rem;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 4rem; }
+
+    .section-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      margin-bottom: 1.4rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--amber-dim);
+      border-radius: 50%;
+    }
+
+    /* ── ENTRY (projeto, formação, exp) ── */
+    .entry {
+      padding: 1.2rem 0 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .entry:last-child { border-bottom: none; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: .35rem;
+    }
+    .entry-title {
+      font-family: 'Cormorant', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1.2;
+    }
+    .entry-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .entry-title a:hover { color: var(--amber); }
+
+    .entry-badge {
+      font-family: 'Raleway', sans-serif;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      background: var(--amber-glow2);
+      border: 1px solid rgba(200,145,58,.2);
+      padding: 2px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .entry-badge.green {
+      color: var(--green);
+      background: rgba(58,122,74,.08);
+      border-color: rgba(58,122,74,.2);
+    }
+
+    .entry-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      margin-bottom: .7rem;
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .entry-sub-dot { color: var(--border-2); }
+
+    .entry-desc {
+      font-size: .95rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+
+    .entry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .8rem;
+    }
+    .tag {
+      font-family: 'Raleway', sans-serif;
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+    .tag.amber { color: var(--amber-dim); border-color: rgba(200,145,58,.2); background: var(--amber-glow2); }
+
+    /* ── PULLQUOTE ── */
+    .pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.7;
+      border-left: 2px solid var(--amber);
+      padding: .5rem 0 .5rem 1.4rem;
+      margin: 2.5rem 0;
+      color: var(--gold);
+      background: linear-gradient(to right, var(--amber-glow2), transparent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* ── SKILL BARS ── */
+    .skill-row {
+      margin-bottom: .9rem;
+    }
+    .skill-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .3rem;
+    }
+    .skill-name {
+      font-family: 'Raleway', sans-serif;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .skill-level {
+      font-family: 'Raleway', sans-serif;
+      font-size: .58rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .skill-track {
+      height: 2px;
+      background: var(--surface-3);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--amber-dim), var(--amber));
+      border-radius: 99px;
+      transform-origin: left;
+      animation: growBar .8s ease forwards;
+      transform: scaleX(0);
+    }
+    @keyframes growBar {
+      to { transform: scaleX(1); }
+    }
+
+    /* ── SIDE SECTION ── */
+    .side-section { margin-bottom: 2.5rem; }
+    .side-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--amber-dim);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.1rem;
+      margin-bottom: .8rem;
+    }
+    .cert-name {
+      font-family: 'Cormorant', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: .2rem;
+    }
+    .cert-meta {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Raleway', sans-serif;
+      font-size: .7rem;
+    }
+    .lang-row:last-child { border-bottom: none; }
+    .lang-name { color: var(--text-dim); letter-spacing: .06em; font-weight: 400; }
+    .lang-val { color: var(--text-muted); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+
+    .interest-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .95rem;
+      font-style: italic;
+      color: var(--text-dim);
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+    }
+    .interest-item:last-child { border-bottom: none; }
+    .interest-item::before {
+      content: '→';
+      color: var(--amber-dim);
+      font-style: normal;
+      font-family: 'Raleway', sans-serif;
+      font-size: .8rem;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 1px solid var(--border);
+      margin-left: .3rem;
+    }
+    .timeline li {
+      position: relative;
+      padding: 0 0 1rem 1.3rem;
+      font-size: .88rem;
+      color: var(--text-dim);
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: .52rem;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--amber-dim);
+      box-shadow: 0 0 6px var(--amber-glow);
+    }
+    .timeline li strong {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: .15rem;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem, 6vw, 4rem);
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-text {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-links a {
+      font-family: 'Raleway', sans-serif;
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .footer-links a:hover { color: var(--amber); }
+
+    /* ── GLOW ORBS (decorativos) ── */
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+      opacity: .04;
+    }
+    .glow-orb-1 {
+      width: 400px; height: 400px;
+      background: var(--amber);
+      top: -100px; right: -100px;
+    }
+    .glow-orb-2 {
+      width: 300px; height: 300px;
+      background: var(--amber);
+      bottom: 100px; left: -80px;
+    }
+
+    /* ── SKILL MAP ── */
+    .skill-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .skill-map-block {
+      background: var(--surface-2);
+      padding: 1.3rem 1.4rem;
+      transition: background .2s;
+    }
+    .skill-map-block:hover { background: var(--surface-3); }
+    .skill-map-block.warning {
+      grid-column: 1 / -1;
+      background: rgba(138,64,64,.06);
+      border-top: 1px solid rgba(138,64,64,.15);
+    }
+    .skill-map-block.warning:hover { background: rgba(138,64,64,.1); }
+
+    .skill-map-header {
+      display: flex;
+      align-items: baseline;
+      gap: .5rem;
+      margin-bottom: .8rem;
+      flex-wrap: wrap;
+    }
+    .skill-map-icon { font-size: .95rem; }
+    .skill-map-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+    .skill-map-block.warning .skill-map-title { color: #a05050; }
+    .skill-map-desc {
+      font-family: 'Raleway', sans-serif;
+      font-size: .6rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .skill-map-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skill-map-list li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .93rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      padding: .25rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+    }
+    .skill-map-list li:last-child { border-bottom: none; }
+    .skill-map-list li::before {
+      content: '—';
+      color: var(--amber-dim);
+      font-family: 'Raleway', sans-serif;
+      font-size: .7rem;
+      flex-shrink: 0;
+      margin-top: .2rem;
+    }
+    .skill-map-block.warning .skill-map-list li::before { color: #8a4040; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-aside { align-items: flex-start; flex-direction: row; }
+      .page-body { grid-template-columns: 1fr; }
+      .main-col { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 3rem; }
+      .side-col { padding-left: 0; }
+      .topbar-nav { display: none; }
+      .skill-map { grid-template-columns: 1fr; }
+      .skill-map-block.warning { grid-column: 1; }
+    }
+
+    /* ── FADE-IN ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp .6s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+    .delay-4 { animation-delay: .4s; }
+    .delay-5 { animation-delay: .5s; }
+  </style>
+</head>
+<body>
+
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+
+  <!-- NAV -->
+  <header class="topbar">
+    <div class="topbar-logo">Matheus Lopes</div>
+    <nav class="topbar-nav">
+      <a href="#projetos">Projetos</a>
+      <a href="#formacao">Formação</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#escrita">Escrita</a>
+    </nav>
+    <span class="topbar-tag">Currículo · 2026</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero fade-up">
+    <div>
+      <p class="hero-kicker">Desenvolvedor · Engenheiro · Escritor</p>
+      <h1 class="hero-name">Matheus<br/>Lopes</h1>
+      <p class="hero-title">Fullstack em formação — sistemas que pensam antes de construir.</p>
+      <p class="hero-summary">
+        Estudante de Engenharia de Materiais na UFRN e Técnico de TI em formação, com foco em
+        desenvolvimento fullstack e segurança de aplicações. Construo sistemas completos com atenção
+        a arquitetura, versionamento e escalabilidade — e me interesso profundamente pela questão:
+        <em>como projetar sistemas onde ataques são difíceis por design?</em>
+      </p>
+      <div class="hero-contacts">
+        <a class="contact-pill" href="/cdn-cgi/l/email-protection#167b77627363657a796673652f2f232256717b777f7a3875797b">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <span class="__cf_email__" data-cfemail="45282431203036292a3520367c7c7071052228242c296b262a28">[email&#160;protected]</span>
+        </a>
+        <a class="contact-pill" href="tel:+5584986399815">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (84) 98639-9815
+        </a>
+        <a class="contact-pill" href="https://www.linkedin.com/in/matheus-lopes-de-paiva-pereira-000664238/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact-pill" href="https://github.com/ToddynhoVT9" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a class="contact-pill" href="https://toddynhovt.com" target="_blank">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          toddynhovt.com
+        </a>
+        <span class="contact-pill">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Natal, RN
+        </span>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="hero-monogram">ML</div>
+      <div class="hero-location">Natal · Rio Grande do Norte<br/>Brasil</div>
+    </div>
+  </section>
+
+  <div class="page-body">
+
+    <!-- COLUNA PRINCIPAL -->
+    <main class="main-col">
+
+      <!-- PROJETOS -->
+      <section class="section fade-up delay-1" id="projetos">
+        <h2 class="section-label">Projetos Pessoais</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://toddynhovt.com" target="_blank">SiteToddy ↗</a>
+            </div>
+            <span class="entry-badge">Em desenvolvimento</span>
+          </div>
+          <div class="entry-sub">
+            <span>Site pessoal fullstack</span>
+            <span class="entry-sub-dot">·</span>
+            <span>github.com/ToddynhoVT9/SiteToddy</span>
+          </div>
+          <p class="entry-desc">
+            Projeto fullstack próprio desenvolvido com React, React Router, Node.js e Vite.
+            Representa o domínio completo do ciclo — da interface ao servidor — com atenção
+            a performance, organização de rotas e experiência do usuário.
+          </p>
+          <div class="entry-tags">
+            <span class="tag amber">JavaScript</span>
+            <span class="tag amber">React</span>
+            <span class="tag amber">Node.js</span>
+            <span class="tag amber">Vite</span>
+            <span class="tag">Fullstack</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://github.com/ToddynhoVT9/brackdy" target="_blank">Brackdy ↗</a>
+            </div>
+            <span class="entry-badge">Em desenvolvimento</span>
+          </div>
+          <div class="entry-sub">
+            <span>Linguagem DSL</span>
+            <span class="entry-sub-dot">·</span>
+            <span>github.com/ToddynhoVT9/brackdy</span>
+          </div>
+          <p class="entry-desc">
+            DSL (Domain-Specific Language) criada para reduzir a verbosidade do HTML + CSS.
+            Construída principalmente em TypeScript — demonstra capacidade de pensar em
+            abstrações de linguagem, parsing e design de sintaxe.
+          </p>
+          <div class="entry-tags">
+            <span class="tag amber">TypeScript</span>
+            <span class="tag">DSL</span>
+            <span class="tag">Compiladores</span>
+            <span class="tag">Parser</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://github.com/ToddynhoVT9/ToddyMarkDown" target="_blank">ToddyMarkDown ↗</a>
+            </div>
+            <span class="entry-badge">Em desenvolvimento</span>
+          </div>
+          <div class="entry-sub">
+            <span>Extensão editorial de Markdown</span>
+            <span class="entry-sub-dot">·</span>
+            <span>github.com/ToddynhoVT9/ToddyMarkDown</span>
+          </div>
+          <p class="entry-desc">
+            Sistema de blocos especiais para Markdown que permite diagramar elementos visuais
+            sofisticados — citações destacadas, linhas do tempo, texto fluindo ao redor de imagens —
+            sem poluir a sintaxe e mantendo a leveza de texto puro.
+          </p>
+          <div class="entry-tags">
+            <span class="tag amber">TypeScript</span>
+            <span class="tag">Markdown</span>
+            <span class="tag">Editorial</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://famax.toddynho.com" target="_blank">Famax ↗</a>
+            </div>
+            <span class="entry-badge green">Projeto em grupo</span>
+          </div>
+          <div class="entry-sub">
+            <span>Fórum colaborativo</span>
+            <span class="entry-sub-dot">·</span>
+            <span>github.com/ToddynhoVT9/famax</span>
+            <span class="entry-sub-dot">·</span>
+            <span>famax.toddynho.com</span>
+          </div>
+          <p class="entry-desc">
+            Fórum desenvolvido em grupo com colegas do Grau Técnico. Projeto colaborativo que
+            exercita dinâmica de equipe, integração de código entre múltiplos contribuidores,
+            versionamento compartilhado e entrega de um produto funcional e publicado.
+          </p>
+          <div class="entry-tags">
+            <span class="tag amber">Colaborativo</span>
+            <span class="tag">Fórum</span>
+            <span class="tag">Git colaborativo</span>
+            <span class="tag">Deploy</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://github.com/ToddynhoVT9/FullStackPlan" target="_blank">FullStackPlan ↗</a>
+            </div>
+            <span class="entry-badge green">Mais completo</span>
+          </div>
+          <div class="entry-sub">
+            <span>Arquitetura de projetos</span>
+            <span class="entry-sub-dot">·</span>
+            <span>github.com/ToddynhoVT9/FullStackPlan</span>
+          </div>
+          <p class="entry-desc">
+            Árvore estruturada de arquivos Markdown que planeja, documenta e comunica o desenvolvimento
+            completo de uma aplicação fullstack. Reflete o hábito de pensar em sistemas antes de construí-los.
+          </p>
+          <div class="entry-tags">
+            <span class="tag amber">Markdown</span>
+            <span class="tag">Arquitetura</span>
+            <span class="tag">Documentação</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MAPA DE HABILIDADES -->
+      <section class="section fade-up delay-2" id="habilidades-mapa">
+        <h2 class="section-label">Mapa de Habilidades</h2>
+
+        <div class="skill-map">
+
+          <div class="skill-map-block">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">🧠</span>
+              <span class="skill-map-title">Núcleo Técnico</span>
+              <span class="skill-map-desc">o que sei fazer de verdade</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Desenvolvimento fullstack — frontend, backend e persistência</li>
+              <li>Aplicações com React, Node.js e PostgreSQL</li>
+              <li>Estruturação de projetos completos: do layout à API e banco</li>
+              <li>Organização de código com foco em clareza e evolução</li>
+            </ul>
+          </div>
+
+          <div class="skill-map-block">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">⚙️</span>
+              <span class="skill-map-title">Engenharia de Software</span>
+              <span class="skill-map-desc">diferencial real</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Pensamento arquitetural — camadas e separação de responsabilidades</li>
+              <li>Organização em estruturas escaláveis: pastas, módulos, documentação</li>
+              <li>Versionamento sólido com Git e GitHub</li>
+              <li>Preocupação com manutenibilidade — não só "fazer funcionar"</li>
+            </ul>
+          </div>
+
+          <div class="skill-map-block">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">🧩</span>
+              <span class="skill-map-title">Mentalidade e Abordagem</span>
+              <span class="skill-map-desc">como penso e aprendo</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Pensamento sistêmico — vejo o sistema inteiro, não partes isoladas</li>
+              <li>Facilidade em estruturar problemas complexos</li>
+              <li>Aprendizado autodirigido e contínuo</li>
+              <li>Capacidade de transformar ideias em projetos concretos</li>
+            </ul>
+          </div>
+
+          <div class="skill-map-block">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">🛠️</span>
+              <span class="skill-map-title">Prática Aplicada</span>
+              <span class="skill-map-desc">o que sustenta o discurso</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Projetos próprios de sistemas web completos</li>
+              <li>Aplicações com frontend e backend integrados</li>
+              <li>Documentação estruturada com Markdown e organização de conhecimento</li>
+              <li>Experiência com erros reais de build, deploy e ambiente</li>
+            </ul>
+          </div>
+
+          <div class="skill-map-block">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">🚀</span>
+              <span class="skill-map-title">Potencial de Evolução</span>
+              <span class="skill-map-desc">o que já comecei a construir</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Noções de CI/CD, containerização e deploy</li>
+              <li>Interesse em arquitetura robusta e sistemas escaláveis</li>
+              <li>Base sólida para evoluir em segurança — AppSec / DevSecOps</li>
+            </ul>
+          </div>
+
+          <div class="skill-map-block warning">
+            <div class="skill-map-header">
+              <span class="skill-map-icon">⚠️</span>
+              <span class="skill-map-title">Ajuste Honesto</span>
+              <span class="skill-map-desc">pontos que acompanho de perto</span>
+            </div>
+            <ul class="skill-map-list">
+              <li>Transformar conhecimento em projetos demonstráveis bem acabados</li>
+              <li>Evitar parecer "teórico demais" sem entrega visível</li>
+              <li>Consolidar menos tecnologias, mas com mais profundidade</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PULLQUOTE -->
+      <div class="pullquote fade-up delay-2">
+        "Como projetaria um sistema onde ataques são difíceis por design? Como garantir
+        identidade e autorização em larga escala? Como evitar classes inteiras de bugs,
+        não só corrigir um?"
+      </div>
+
+      <!-- FORMAÇÃO -->
+      <section class="section fade-up delay-2" id="formacao">
+        <h2 class="section-label">Formação Acadêmica</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Engenharia de Materiais</div>
+            <span class="entry-badge">7º Semestre</span>
+          </div>
+          <div class="entry-sub">
+            <span>Universidade Federal do Rio Grande do Norte — UFRN</span>
+            <span class="entry-sub-dot">·</span>
+            <span>Previsão: Dezembro de 2027</span>
+          </div>
+          <p class="entry-desc">
+            Formação em engenharia com sólida base em matemática, física e modelagem de sistemas.
+            A perspectiva de engenheiro permeia a forma como projeto e estruturo software.
+          </p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Técnico em Informática (TI)</div>
+            <span class="entry-badge">Em curso</span>
+          </div>
+          <div class="entry-sub">
+            <span>Grau Técnico — Natal Zona Norte</span>
+            <span class="entry-sub-dot">·</span>
+            <span>Previsão: Outubro de 2026</span>
+          </div>
+          <p class="entry-desc">
+            Formação técnica com ênfase em infraestrutura, sistemas operacionais e fundamentos de TI.
+            Complementa a formação de engenharia com conteúdo aplicado de tecnologia.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- EXPERIÊNCIA -->
+      <section class="section fade-up delay-3" id="habilidades">
+        <h2 class="section-label">Experiência</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Designer Freelancer</div>
+            <span class="entry-badge green">Atual</span>
+          </div>
+          <div class="entry-sub">
+            <span>Autônomo</span>
+            <span class="entry-sub-dot">·</span>
+            <span>Remoto</span>
+          </div>
+          <p class="entry-desc">
+            Serviços de vetorização de imagens, correção e tratamento de cores,
+            remoção de fundos e edição profissional de imagens. Atendimento a demandas
+            variadas com entregas de qualidade e precisão técnica.
+          </p>
+          <div class="entry-tags">
+            <span class="tag">Vetorização</span>
+            <span class="tag">Edição de Imagens</span>
+            <span class="tag">Tratamento de Cor</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ESCRITA -->
+      <section class="section fade-up delay-4" id="escrita">
+        <h2 class="section-label">Escrita & Publicações</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://substack.com/@toddynhovt" target="_blank">Substack ↗</a>
+            </div>
+            <span class="entry-badge">Artigos técnicos</span>
+          </div>
+          <div class="entry-sub">
+            <span>substack.com/@toddynhovt</span>
+          </div>
+          <p class="entry-desc">
+            Artigos sobre engenharia, tecnologia e sistemas. Destaque para análise sobre o
+            sistema elétrico nacional brasileiro — escrito a partir de pesquisa autônoma e
+            indignação intelectual legítima.
+          </p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              <a href="https://app.valete.org.br/u/toddynhoVT" target="_blank">Valete ↗</a>
+            </div>
+            <span class="entry-badge">Publicações diversas</span>
+          </div>
+          <div class="entry-sub">
+            <span>app.valete.org.br/u/toddynhoVT</span>
+          </div>
+          <p class="entry-desc">
+            Publicações cobrindo diferentes temas. A escrita regular reflete hábito de
+            organização de pensamento, comunicação técnica e capacidade de sintetizar
+            assuntos complexos para audiências variadas.
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- COLUNA LATERAL -->
+    <aside class="side-col">
+
+      <!-- HABILIDADES TÉCNICAS -->
+      <div class="side-section">
+        <h3 class="side-label">Habilidades Técnicas</h3>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">Git / GitHub</span>
+            <span class="skill-level">Avançado</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">Linux / Terminal</span>
+            <span class="skill-level">Avançado</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">JavaScript / TypeScript</span>
+            <span class="skill-level">Intermediário</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">Desenvolvimento Web</span>
+            <span class="skill-level">Intermediário</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">Banco de Dados (SQL)</span>
+            <span class="skill-level">Intermediário</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:60%"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label-row">
+            <span class="skill-name">Python</span>
+            <span class="skill-level">Básico–Médio</span>
+          </div>
+          <div class="skill-track"><div class="skill-fill" style="width:45%"></div></div>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICAÇÕES -->
+      <div class="side-section">
+        <h3 class="side-label">Certificações</h3>
+        <div class="cert-card">
+          <div class="cert-name">Lendário Full-Stack Game</div>
+          <div class="cert-meta">Grau Técnico · Março de 2026 · 4h</div>
+        </div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="side-section">
+        <h3 class="side-label">Idiomas</h3>
+        <div class="lang-row">
+          <span class="lang-name">Português</span>
+          <span class="lang-val">Nativo</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Inglês — Leitura</span>
+          <span class="lang-val">Avançado</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Inglês — Escuta</span>
+          <span class="lang-val">Intermediário</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Inglês — Fala</span>
+          <span class="lang-val">Básico</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Inglês — Escrita</span>
+          <span class="lang-val">Básico</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Espanhol — Leitura</span>
+          <span class="lang-val">Avançado</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Espanhol — Escuta</span>
+          <span class="lang-val">Avançado</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Espanhol — Fala</span>
+          <span class="lang-val">Intermediário</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Espanhol — Escrita</span>
+          <span class="lang-val">Intermediário</span>
+        </div>
+      </div>
+
+      <!-- INTERESSES EM SEGURANÇA -->
+      <div class="side-section">
+        <h3 class="side-label">Interesses em Seg. da Info</h3>
+        <div class="interest-item">Desenvolvimento seguro por design</div>
+        <div class="interest-item">Identidade e autorização em escala (IAM)</div>
+        <div class="interest-item">Prevenção de classes de vulnerabilidades</div>
+        <div class="interest-item">Modelagem de ameaças e arquitetura segura</div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="side-section">
+        <h3 class="side-label">Linha do Tempo</h3>
+        <ul class="timeline">
+          <li>
+            <strong>Mar 2026</strong>
+            Certificação Full-Stack Game · Grau Técnico
+          </li>
+          <li>
+            <strong>2025–2026</strong>
+            Desenvolvimento de Brackdy, ToddyMarkDown e SiteToddy
+          </li>
+          <li>
+            <strong>2024</strong>
+            Início da escrita técnica no Substack
+          </li>
+          <li>
+            <strong>2022 – atual</strong>
+            Engenharia de Materiais · UFRN
+          </li>
+          <li>
+            <strong>Out 2024 – atual</strong>
+            Técnico de TI · Grau Técnico
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span class="footer-text">Matheus Lopes de Paiva Pereira · Natal, RN · 2026</span>
+    <div class="footer-links">
+      <a href="https://github.com/ToddynhoVT9" target="_blank">GitHub</a>
+      <a href="https://substack.com
