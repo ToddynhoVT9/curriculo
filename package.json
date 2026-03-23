@@ -1,0 +1,25 @@
+{
+  "name": "curriculo",
+  "version": "1.0.0",
+  "description": "Currículo de Matheus Lopes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToddynhoVT9/curriculo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ToddynhoVT9/curriculo/issues"
+  },
+  "homepage": "https://github.com/ToddynhoVT9/curriculo#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
